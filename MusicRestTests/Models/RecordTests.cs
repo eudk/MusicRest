@@ -11,30 +11,59 @@ namespace MusicRest.Tests
     [TestClass()]
     public class RecordTests
     {
+        Record validRecord = new Record() { Artist = "f", Duration = 1, PublicationYear = 1000, Title = "f" };
+        Record invalidRecordArtistEmptyString = new Record() { Artist = "", Duration = 123, PublicationYear = 1230, Title = "fwe" };
+        Record invalidRecordArtistNull = new Record() { Artist = null, Duration = 123, PublicationYear = 1230, Title = "fwe" };
+        Record invalidRecordDuration = new Record() { Artist = "fewfef", Duration = 0, PublicationYear = 1230, Title = "fwe" };
+        Record invalidRecordPublicationYear = new Record() { Artist = "fewfef", Duration = 123, PublicationYear = 999, Title = "fwe" };
+        Record invalidRecordTitleString = new Record() { Artist = "fewfef", Duration = 123, PublicationYear = 1230, Title = "" };
+        Record invalidRecordTitleNull = new Record() { Artist = "fewfef", Duration = 123, PublicationYear = 1230, Title = null };
+
+        
+
         [TestMethod()]
         public void ValidateRecordisValid()
         {
-            var validRecord = new Record() {Artist = "fewfef",Duration = 123,PublicationYear = 1230,Title = "fwe"};
-            var invalidRecordArtistTomString = new Record() { Artist = "", Duration = 123, PublicationYear = 1230, Title = "fwe" };
-            var invalidRecordArtistNull = new Record() { Artist = null, Duration = 123, PublicationYear = 1230, Title = "fwe" };
-            var invalidRecordDuration = new Record() { Artist = "fewfef", Duration = -123, PublicationYear = 1230, Title = "fwe" };
-            var invalidRecordPublicationYear = new Record() { Artist = "fewfef", Duration = 123, PublicationYear = 123, Title = "fwe" };
-            var invalidRecordTitleString = new Record() { Artist = "fewfef", Duration = 123, PublicationYear = 1230, Title = "" };
-            var invalidRecordTitleNull = new Record() { Artist = "fewfef", Duration = 123, PublicationYear = 1230, Title = null };
-
 
             validRecord.Validate();
-            Assert.ThrowsException<ArgumentException>(() => invalidRecordArtistTomString.Validate());
-            Assert.ThrowsException<ArgumentNullException>(() => invalidRecordArtistNull.Validate());
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => invalidRecordDuration.Validate());
-            Assert.ThrowsException<ArgumentException>(() => invalidRecordPublicationYear.Validate());
-            Assert.ThrowsException<ArgumentException>(() => invalidRecordTitleString.Validate());
-            Assert.ThrowsException<ArgumentNullException>(() => invalidRecordTitleNull.Validate());
-
         }
-        
 
-        //
+        [TestMethod()]
+        public void ValidateRecordNotValidTitleNull()
+        {
+            Assert.ThrowsException<ArgumentNullException>(() => invalidRecordTitleNull.Validate());
+        }
+
+        [TestMethod()]
+        public void ValidateRecordNotValidTitleEmptyString()
+        {
+            Assert.ThrowsException<ArgumentException>(() => invalidRecordTitleString.Validate());
+        }
+
+        [TestMethod()]
+        public void ValidateRecordNotValidArtistNull()
+        {
+            Assert.ThrowsException<ArgumentNullException>(() => invalidRecordArtistNull.Validate());
+        }
+
+        [TestMethod()]
+        public void ValidateRecordNotValidArtistEmptyString()
+        {
+            Assert.ThrowsException<ArgumentException>(() => invalidRecordArtistEmptyString.Validate());
+        }
+
+        [TestMethod()]
+        public void ValidateRecordNotValidRecordDuration()
+        {
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => invalidRecordDuration.Validate());
+        }
+
+        [TestMethod()]
+        public void ValidateRecordNotValidPublicationYear()
+        {
+            Assert.ThrowsException<ArgumentException>(() => invalidRecordPublicationYear.Validate());
+        }
+
 
 
         [TestMethod()]

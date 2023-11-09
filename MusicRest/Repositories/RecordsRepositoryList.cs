@@ -11,7 +11,7 @@ public class RecordsRepositoryList
     
     _records.Add (new Record { Id = _nextId++, Title = "The Dark Side of the Moon", Artist = " Floyd", Duration = 43, PublicationYear = 1973 });
     _records.Add (new Record { Id = _nextId++, Title = "The Wall", Artist = "Pink Floyd", Duration = 81, PublicationYear = 1979 });
-        _records.Add (new Record { Id = _nextId++, Title = "Wish You Were Here", Artist = "Pink ", Duration = 44, PublicationYear = 1975 });
+        _records.Add(new Record { Id = _nextId++, Title = "Wish You Were Here", Artist = "Pink ", Duration = 44, PublicationYear = 1975 });
         _records.Add (new Record { Id = _nextId++, Title = "Animals", Artist = "Pink Floyd", Duration = 41, PublicationYear = 1977 });
         _records.Add (new Record { Id = _nextId++, Title = "The Piper at the Gates of Dawn", Artist = "Pink Floyd", Duration = 42, PublicationYear = 1967 });
         _records.Add (new Record { Id = _nextId++, Title = "The Final Cut", Artist = "Pink Floyd", Duration = 43, PublicationYear = 1983 });
