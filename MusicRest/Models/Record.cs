@@ -2,7 +2,7 @@ namespace MusicRest;
 
 public class Record
 {
-    public int Id { get; set; }
+    public int? Id { get; set; }
     public string? Title { get; set; }
     public string? Artist { get; set; }
     public int Duration { get; set; }
@@ -44,7 +44,7 @@ public class Record
     {
         if (Duration < 1)
         {
-            throw new ArgumentOutOfRangeException("Duration must be positive", Duration);
+            throw new ArgumentOutOfRangeException("Duration must be positive");
         }
     }
 
