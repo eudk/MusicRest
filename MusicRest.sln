@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33927.249
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicRest", "MusicRest\MusicRest.csproj", "{61255A97-F665-4B98-BCEA-6AD0E1ACC916}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61255A97-F665-4B98-BCEA-6AD0E1ACC916}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61255A97-F665-4B98-BCEA-6AD0E1ACC916}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61255A97-F665-4B98-BCEA-6AD0E1ACC916}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61255A97-F665-4B98-BCEA-6AD0E1ACC916}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D84FB77C-9D05-44C5-BE9F-25868E680DEE}
+	EndGlobalSection
+EndGlobal
