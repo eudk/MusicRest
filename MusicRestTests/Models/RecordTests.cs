@@ -69,7 +69,10 @@ namespace MusicRest.Tests
         [TestMethod()]
         public void ToStringTest()
         {
-            Assert.Fail();
+            string ActualString = validRecord.ToString();
+            string ExpectedString = "Id: , Title: f, Artist: f, Duration: 1, Publication Year: 1000";
+            Assert.AreEqual(ExpectedString, ActualString);
+
         }
     }
 }

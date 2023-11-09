@@ -58,6 +58,6 @@ public class Record
 
     public override string ToString()
     {
-        return string.Format("Title: {}, Artist: {}, Duration: {}, Publication Year: {}", Title, Artist, Duration, PublicationYear);
+        return string.Format("Id: {0}, Title: {1}, Artist: {2}, Duration: {3}, Publication Year: {4}",Id ,Title, Artist, Duration, PublicationYear);
     }
 }
