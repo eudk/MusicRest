@@ -28,4 +28,15 @@ public class RecordsRepositoryList
         return new List<Record>(_records); // copy
     }
 
+    public IEnumerable<Record> Get(int? id = null, string title = "", string artist = "", int? duration = 0, int? publicationYear = null)
+    {
+        var result = new List<Record>(_records);
+        if (id != null)
+            result = result.FindAll (x => x.Id == id);
+        result = result.FindAll (x => x.Title.Contains(title) && x.Artist.Contains(artist));
+        result = result.FindAll(x => x.Duration >= duration);
+        if (publicationYear != null)
+            result = result.FindAll (x => x.PublicationYear == publicationYear);
+        return result;
+    }
 }
