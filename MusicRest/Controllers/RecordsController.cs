@@ -18,7 +18,7 @@ namespace MusicRest.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public ActionResult<Record> Get([FromQuery] string? title = null, [FromQuery] string? artist = null, [FromQuery] int? duration = null, [FromQuery] int? publicationYear = null)
         {
-            IEnumerable<Record> result = _recordsRepository.Get(title: title ?? "", artist:artist??"", duration:duration?? 0 ,publicationYear:publicationYear?? 0 );
+            IEnumerable<Record> result = _recordsRepository.Get(title: title ?? "", artist:artist??"", duration:duration?? 0 ,publicationYear:publicationYear);
 
             if (result.Any()) { return Ok(result); }
             return NoContent();
