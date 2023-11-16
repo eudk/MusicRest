@@ -33,7 +33,7 @@ public class RecordsRepositoryList
         var result = new List<Record>(_records);
         if (id != null)
             result = result.FindAll (x => x.Id == id);
-        result = result.FindAll (x => x.Title.Contains(title) && x.Artist.Contains(artist));
+        result = result.FindAll (x => x.Title.Contains(title,StringComparison.CurrentCultureIgnoreCase) && x.Artist.Contains(artist, StringComparison.CurrentCultureIgnoreCase)); //ignore case sensitive
         result = result.FindAll(x => x.Duration >= duration);
         if (publicationYear != null)
             result = result.FindAll (x => x.PublicationYear == publicationYear);
